@@ -48,3 +48,36 @@ This project is designed for educational purposes using a hypothetical office en
 ---
 **Author:** Samruddha Kale  
 **Field:** IT & Cybersecurity
+## Project Progress
+
+### Milestone 1: Network Setup and VLAN Segmentation
+
+- Created a small office network using a Cisco 1941 router and Cisco 2960 switch.
+- Connected two PCs to separate VLANs.
+- Created VLAN 10 (ADMIN) and VLAN 20 (EMPLOYEES).
+- Configured an 802.1Q trunk between the switch and router.
+- Configured router-on-a-stick for inter-VLAN routing.
+
+### Milestone 2: ACL-Based Traffic Control
+
+- Created an extended ACL named `EMPLOYEE-RESTRICTION`.
+- Applied the ACL inbound on router subinterface `GigabitEthernet0/0.20`.
+- Blocked IP traffic initiated from EMPLOYEES to ADMIN.
+- Allowed ICMP echo replies from EMPLOYEES to ADMIN so ADMIN-initiated ping tests could succeed.
+
+### Verification Results
+
+| Test | Expected result | Actual result |
+|---|---|---|
+| PC0 → ADMIN gateway | Success | Passed |
+| PC1 → EMPLOYEES gateway | Success | Passed |
+| PC0 → PC1 before ACL | Success | Passed |
+| PC1 → PC0 after ACL | Blocked | Passed |
+| PC0 → PC1 after ACL | Success | Passed |
+
+### Security Notes
+
+- VLANs provide logical network segmentation.
+- Extended ACLs control traffic based on source and destination IP addresses and protocol.
+- This is a basic stateless ACL demonstration, not a stateful firewall.
+- Further security controls and testing are required before treating this as a production-ready network.
