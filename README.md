@@ -109,3 +109,33 @@ This project is designed for educational purposes using a hypothetical office en
 - Extended ACLs control traffic based on source and destination IP addresses and protocol.
 - This is a basic stateless ACL demonstration, not a stateful firewall.
 - Further security controls and testing are required before treating this as a production-ready network.
+### Milestone 4: Secure Device Management
+
+- Configured privileged EXEC password protection on the router.
+- Created a local administrator account.
+- Configured SSH version 2 for secure remote management.
+- Disabled Telnet access on router VTY lines.
+- Restricted router SSH management access to the ADMIN subnet using a standard ACL.
+- Applied similar SSH-based management security to the switch.
+- Verified remote SSH login to both SW1 and R1.
+- Saved router and switch configurations.
+
+### Milestone 4 Verification Results
+
+| Test | Expected result | Actual result |
+|---|---|---|
+| Router SSH from ADMIN | Allowed | Passed |
+| Switch SSH from ADMIN | Allowed | Passed |
+| SSH management restriction | ADMIN subnet only | Configured |
+| SSH version | Version 2 | Passed |
+| Router configuration saved | Successful | Passed |
+| ADMIN → EMPLOYEES | Allowed | Passed |
+| EMPLOYEES → ADMIN | Blocked | Passed |
+
+### Additional Security Notes
+
+- SSH provides encrypted remote device management.
+- Local user authentication avoids relying on a shared VTY password.
+- The SSH management ACL limits remote access to the ADMIN subnet.
+- RSA 1024-bit keys were used for Packet Tracer compatibility; production systems should use stronger supported key sizes.
+- This project demonstrates basic network segmentation and access control, not a complete production security architecture.
