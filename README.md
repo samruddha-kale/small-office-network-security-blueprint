@@ -74,7 +74,35 @@ This project is designed for educational purposes using a hypothetical office en
 | PC0 → PC1 before ACL | Success | Passed |
 | PC1 → PC0 after ACL | Blocked | Passed |
 | PC0 → PC1 after ACL | Success | Passed |
+### Milestone 3: Network Hardening
 
+- Configured switch port security on `Fa0/1` and `Fa0/2`.
+- Set a maximum of one secure MAC address per access port.
+- Enabled sticky MAC address learning.
+- Configured violation mode as `restrict` to drop traffic from unauthorized MAC addresses while keeping the port active.
+- Verified that both PC MAC addresses were learned as secure sticky addresses.
+- Administratively disabled unused switch ports (`Fa0/3–Fa0/24` and `Gig0/2`).
+- Kept active PC connections and the router uplink operational.
+
+### Milestone 3 Verification Results
+
+| Test | Expected result | Actual result |
+|---|---|---|
+| Port security on Fa0/1 and Fa0/2 | Enabled | Passed |
+| Sticky MAC learning | One MAC per port | Passed |
+| Unused FastEthernet ports | Disabled | Passed |
+| Unused GigabitEthernet0/2 | Disabled | Passed |
+| Active PC and router ports | Remain operational | Passed |
+| PC0 → ADMIN gateway | Success | Passed |
+| PC1 → EMPLOYEES gateway | Success | Passed |
+| PC0 → PC1 | Success | Passed |
+
+### Additional Security Notes
+
+- Port security helps limit unauthorized device connections to access ports.
+- Sticky MAC learning dynamically learns and stores secure MAC addresses.
+- Restrict mode drops traffic from violating MAC addresses and records security violations.
+- Unused switch ports are administratively disabled to reduce unnecessary access points.
 ### Security Notes
 
 - VLANs provide logical network segmentation.
