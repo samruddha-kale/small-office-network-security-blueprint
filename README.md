@@ -77,11 +77,11 @@ The intended office environment includes:
 
 ## Planned Deliverables
 - [x] Network topology diagram
-- [ ] Device inventory
-- [ ] IP addressing plan
+- [x] Device inventory
+- [x] IP addressing plan
 - [x] Network segmentation design
-- [ ] Security risk assessment
-- [ ] Security recommendations
+- [x] Security risk assessment
+- [x] Security recommendations
 - [x] Cisco Packet Tracer simulation
 - [ ] Final project report
 
