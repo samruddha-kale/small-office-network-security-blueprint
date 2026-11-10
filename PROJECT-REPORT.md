@@ -139,6 +139,87 @@ PC0 and PC1 use static IPv4 addressing. Each workstation is assigned an IP addre
 The addressing plan helps organise network devices and supports communication between the two VLANs through the router, subject to the configured ACL rules.
 
 ## 6. Security Implementation
+The network implements multiple security controls to reduce unauthorized access and improve traffic management. These controls are configured on the Cisco 1941 router and Cisco 2960 switch.
+
+### 6.1 VLAN-Based Network Segmentation
+
+The switch is configured with two VLANs:
+
+- VLAN 10 - ADMIN
+- VLAN 20 - EMPLOYEES
+
+PC0 is assigned to VLAN 10, while PC1 is assigned to VLAN 20.
+
+This segmentation separates the two departments into different logical broadcast domains and provides a foundation for applying network access restrictions.
+
+### 6.2 Router-on-a-Stick Configuration
+
+Inter-VLAN routing is implemented using router R1.
+
+The physical interface GigabitEthernet0/0 is configured with two logical subinterfaces:
+
+- G0/0.10 for VLAN 10.
+- G0/0.20 for VLAN 20.
+
+The connection between SW1 and R1 is configured as an 802.1Q trunk, allowing both VLANs to communicate through the router when permitted by the configured access control rules.
+
+### 6.3 ACL-Based Traffic Control
+
+An extended Access Control List named EMPLOYEE-RESTRICTION is configured on router R1.
+
+The ACL is applied inbound on GigabitEthernet0/0.20.
+
+Its rules are:
+
+- Permit ICMP echo-reply traffic from the EMPLOYEES subnet to the ADMIN subnet.
+- Deny other IP traffic from the EMPLOYEES subnet to the ADMIN subnet.
+- Permit other IP traffic.
+
+This configuration restricts employee-initiated traffic towards the ADMIN network while allowing the specified ICMP echo-reply exception.
+
+### 6.4 Switch Port Security
+
+Port security is configured on the following switch interfaces:
+
+- FastEthernet0/1
+- FastEthernet0/2
+
+The configuration includes:
+
+- Maximum of one secure MAC address per port.
+- Sticky MAC address learning.
+- Restrict violation mode.
+
+This helps limit unauthorized device connections through the configured access ports.
+
+### 6.5 Disabling Unused Switch Ports
+
+Unused switch interfaces are administratively disabled.
+
+The following interfaces are shut down:
+
+- FastEthernet0/3 through FastEthernet0/24.
+- GigabitEthernet0/2.
+
+The active PC connections and router uplink remain operational.
+
+This reduces unnecessary physical network access points.
+
+### 6.6 Secure Device Management Using SSH
+
+SSH version 2 is configured on both R1 and SW1.
+
+The management configuration includes:
+
+- Local username authentication.
+- Enable secret configuration.
+- SSH version 2.
+- Telnet access disabled on the configured VTY lines.
+- RSA key generation for SSH.
+
+An additional standard ACL named SSH-ADMIN-ONLY is configured on R1's VTY lines to permit SSH management access from the ADMIN subnet and deny other source addresses.
+
+SSH access was successfully tested from PC0 to both network devices.
 
 ## 7. Testing and Verification
 
