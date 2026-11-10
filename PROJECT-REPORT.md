@@ -222,6 +222,44 @@ An additional standard ACL named SSH-ADMIN-ONLY is configured on R1's VTY lines 
 SSH access was successfully tested from PC0 to both network devices.
 
 ## 7. Testing and Verification
+The network was tested using ping commands, SSH login attempts, and Cisco IOS verification commands. These tests were performed in Cisco Packet Tracer to confirm connectivity and verify the configured security controls.
+
+### 7.1 Connectivity Testing
+
+| Test | Expected Result | Actual Result |
+|---|---|---|
+| PC0 to ADMIN gateway (192.168.10.1) | Successful | Successful |
+| PC1 to EMPLOYEES gateway (192.168.20.1) | Successful | Successful |
+| PC0 to PC1 (192.168.20.10) | Successful | Successful |
+| PC1 to PC0 (192.168.10.10) | Blocked by ACL | Blocked |
+| R1 to PC1 | Successful | Successful |
+| PC0 to SW1 management IP (192.168.10.2) | Successful | Successful |
+
+### 7.2 ACL Verification
+
+The EMPLOYEE-RESTRICTION ACL was checked using the `show access-lists` command.
+
+The test confirmed that traffic initiated from the EMPLOYEES network towards the ADMIN network was blocked, while the permitted traffic rules remained in place.
+
+### 7.3 Port Security Verification
+
+Port security was checked on switch interfaces Fa0/1 and Fa0/2.
+
+The verification confirmed:
+- Port security was enabled.
+- Maximum secure MAC addresses were set to one per port.
+- Sticky MAC address learning was configured.
+- Violation mode was set to restrict.
+
+### 7.4 SSH Verification
+
+SSH version 2 was verified on both R1 and SW1.
+
+SSH login from the ADMIN workstation (PC0) to both network devices was successful. The VTY lines were configured to accept SSH rather than Telnet.
+
+### 7.5 Overall Test Result
+
+The tests confirmed that the network provided the intended VLAN separation, inter-VLAN traffic control, switch port security, and secure remote device management within the Packet Tracer simulation.
 
 ## 8. Security Risk Assessment
 
