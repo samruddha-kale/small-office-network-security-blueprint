@@ -1,7 +1,6 @@
 # Small Office Network Security Blueprint
 
 ## 1. Introduction
-
 This project focuses on designing and securing a hypothetical small office network using Cisco Packet Tracer. The main purpose is to understand how a small office network operates and how basic security measures can help protect network devices and internal resources.
 
 The network consists of a Cisco 1941 router, a Cisco 2960 switch, and two end devices representing different departments. The network is divided into two VLANs: VLAN 10 (ADMIN) and VLAN 20 (EMPLOYEES), allowing logical network segmentation.
@@ -57,6 +56,50 @@ The network topology diagram illustrates the physical connections between the ro
 ![Small Office Network Topology](network-topology.png)
 
 ## 4. Device Inventory
+The network consists of four devices: one router, one managed switch, and two end devices. Each device has a specific role in providing network connectivity, segmentation, and administration.
+
+### 1. Router R1
+
+- Model: Cisco 1941
+- Role: Main network router.
+- Interface connected to switch: GigabitEthernet0/0.
+- Subinterfaces: GigabitEthernet0/0.10 and GigabitEthernet0/0.20.
+- Responsibilities:
+  - Provides inter-VLAN routing.
+  - Acts as the default gateway for both VLANs.
+  - Applies ACL-based traffic restrictions.
+  - Supports secure remote management through SSH version 2.
+
+### 2. Switch SW1
+
+- Model: Cisco 2960.
+- Role: Central network switch.
+- Uplink: GigabitEthernet0/1.
+- Connected end devices: PC0 and PC1.
+- Responsibilities:
+  - Provides VLAN-based network segmentation.
+  - Connects the router and end devices.
+  - Implements switch port security.
+  - Disables unused switch ports.
+  - Provides SSH-based remote management.
+
+### 3. PC0 — ADMIN Workstation
+
+- Device type: Packet Tracer PC.
+- Connected interface: FastEthernet0/1 on SW1.
+- VLAN: 10 (ADMIN).
+- IP address: 192.168.10.10.
+- Default gateway: 192.168.10.1.
+- Purpose: Represents an administrative workstation.
+
+### 4. PC1 — EMPLOYEES Workstation
+
+- Device type: Packet Tracer PC.
+- Connected interface: FastEthernet0/2 on SW1.
+- VLAN: 20 (EMPLOYEES).
+- IP address: 192.168.20.10.
+- Default gateway: 192.168.20.1.
+- Purpose: Represents an employee workstation.
 
 ## 5. IP Addressing Plan
 
