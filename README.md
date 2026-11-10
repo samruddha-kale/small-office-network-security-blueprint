@@ -146,7 +146,7 @@ Security features implemented:
 - Enabled sticky MAC address learning.
 - Configured violation mode as `restrict` to drop traffic from unauthorized MAC addresses while keeping the port active.
 - Verified that both PC MAC addresses were learned as secure sticky addresses.
-- Administratively disabled unused switch ports (`Fa0/3–Fa0/24` and `Gig0/2`).
+- Administratively disabled unused switch ports (`Fa0/3–Fa0/24` and `Gi0/2`).
 - Kept active PC connections and the router uplink operational.
 
 ### Milestone 3 Verification Results
@@ -162,7 +162,7 @@ Security features implemented:
 | PC1 → EMPLOYEES gateway | Success | Passed |
 | PC0 → PC1 | Success | Passed |
 
-### Milestone 3: Additional Security Notes
+### Additional Security Notes
 
 - Port security helps limit unauthorized device connections to access ports.
 - Sticky MAC learning dynamically learns and stores secure MAC addresses.
@@ -198,14 +198,7 @@ Security features implemented:
 | ADMIN → EMPLOYEES | Allowed | Passed |
 | EMPLOYEES → ADMIN | Blocked | Passed |
 
-## Project Limitations
-
-- This is a simulated small-office network built in Cisco Packet Tracer.
-- The extended ACL is stateless and does not provide full stateful firewall inspection.
-- RSA 1024-bit keys were used for Packet Tracer compatibility; stronger keys should be used in production.
-- This project demonstrates foundational network security concepts and is not a production-ready security deployment.
-
-### Milestone 4: Additional Security Notes
+### Additional Security Notes
 
 - SSH provides encrypted remote device management.
 - Local user authentication avoids relying on a shared VTY password.
@@ -230,6 +223,13 @@ Security features implemented:
 - Recorded testing and verification results.
 - Documented security risks, recommendations, and project limitations.
 - Added the project conclusion.
+
+  ## Project Limitations
+
+- This is a simulated small-office network built in Cisco Packet Tracer.
+- The extended ACL is stateless and does not provide full stateful firewall inspection.
+- RSA 1024-bit keys were used for Packet Tracer compatibility; stronger keys should be used in production.
+- This project demonstrates foundational network security concepts and is not a production-ready security deployment.
   
 **Author:** Samruddha Kale  
 **Field:** IT & Cybersecurity
