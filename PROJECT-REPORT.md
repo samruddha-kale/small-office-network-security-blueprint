@@ -26,6 +26,35 @@ The main objectives of this project are:
 10. To document potential security risks, limitations, and recommendations.
     
 ## 3. Network Design
+The small office network is designed using a Cisco 1941 router, a Cisco 2960 switch, and two end devices. The devices are connected using copper straight-through cables.
+
+The router is connected to the switch through GigabitEthernet0/0 on the router and GigabitEthernet0/1 on the switch. The switch-to-router connection is configured as an 802.1Q trunk to carry traffic from multiple VLANs.
+
+The two end devices are connected to separate access ports on the switch:
+
+- PC0 is connected to FastEthernet0/1 and assigned to VLAN 10 (ADMIN).
+- PC1 is connected to FastEthernet0/2 and assigned to VLAN 20 (EMPLOYEES).
+
+### Logical Network Segmentation
+
+The network is divided into two VLANs:
+
+- VLAN 10 (ADMIN): Uses the subnet 192.168.10.0/24.
+- VLAN 20 (EMPLOYEES): Uses the subnet 192.168.20.0/24.
+
+### Inter-VLAN Routing
+
+Router-on-a-stick is implemented on router R1 using two logical subinterfaces:
+
+- GigabitEthernet0/0.10 handles VLAN 10 traffic.
+- GigabitEthernet0/0.20 handles VLAN 20 traffic.
+
+Each subinterface is assigned the corresponding VLAN gateway IP address. This allows communication between the VLANs, subject to the configured Access Control List.
+
+### Network Topology Diagram
+
+The network topology diagram illustrates the physical connections between the router, switch, and end devices, along with the two logical network segments.
+![Small Office Network Topology](network-topology.png)
 
 ## 4. Device Inventory
 
