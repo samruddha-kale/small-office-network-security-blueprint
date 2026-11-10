@@ -42,7 +42,7 @@ The intended office environment includes:
 Through this project, I aim to develop practical knowledge of computer networking, network security, risk assessment, and technical documentation.
 
 ## Project Status
-Currently in progress.
+Milestones 1–4 completed. Additional project documentation and security testing are in progress.
 
 ## Disclaimer
 This project is designed for educational purposes using a hypothetical office environment. No unauthorized networks or systems will be accessed or tested.
