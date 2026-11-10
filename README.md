@@ -57,7 +57,7 @@ This project focuses on designing and securing a hypothetical small office netwo
 - Use a firewall with stateful inspection for better traffic control.
 - Maintain endpoint protection and regularly update computers.
 - Restrict access to sensitive internal resources.
-- 
+  
 ### Network Addressing Details
 
 - ADMIN subnet: 192.168.10.0/24
