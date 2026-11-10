@@ -132,6 +132,13 @@ This project is designed for educational purposes using a hypothetical office en
 | ADMIN → EMPLOYEES | Allowed | Passed |
 | EMPLOYEES → ADMIN | Blocked | Passed |
 
+## Project Limitations
+
+- This is a simulated small-office network built in Cisco Packet Tracer.
+- The extended ACL is stateless and does not provide full stateful firewall inspection.
+- RSA 1024-bit keys were used for Packet Tracer compatibility; stronger keys should be used in production.
+- This project demonstrates foundational network security concepts and is not a production-ready security deployment.
+
 ### Additional Security Notes
 
 - SSH provides encrypted remote device management.
