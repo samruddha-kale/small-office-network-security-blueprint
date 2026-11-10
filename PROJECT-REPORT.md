@@ -337,3 +337,16 @@ This project was developed and tested in Cisco Packet Tracer. Although it demons
 Despite these limitations, the project provides practical experience with network segmentation, access control, device hardening, secure management, and basic security verification.
 
 ## 11. Conclusion
+This project provided practical experience in designing and securing a small office network using Cisco Packet Tracer.
+
+The network was designed with separate ADMIN and EMPLOYEES VLANs, router-on-a-stick inter-VLAN routing, and an ACL to restrict traffic between network segments.
+
+Additional security controls included switch port security, shutdown of unused switch ports, and SSH version 2 for secure remote device management.
+
+Connectivity tests and Cisco IOS verification commands were used to check the network configuration and confirm the behavior of the implemented security controls.
+
+Through this project, I gained practical knowledge of IP addressing, VLAN configuration, trunking, routing, access control lists, switch hardening, SSH configuration, and network troubleshooting.
+
+Although the project uses a simulated environment and has certain limitations, it provides a foundation for understanding how basic network security controls are designed, configured, and verified.
+
+This project is an important step in my journey toward developing practical networking and cybersecurity skills.
