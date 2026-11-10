@@ -36,6 +36,16 @@ This project focuses on designing and securing a hypothetical small office netwo
 | PC0 | FastEthernet0 | 192.168.10.10 | 255.255.255.0 | 192.168.10.1 | 10 - ADMIN |
 | PC1 | FastEthernet0 | 192.168.20.10 | 255.255.255.0 | 192.168.20.1 | 20 - EMPLOYEES |
 
+## Security Risk Assessment
+
+| Potential Risk | Impact | Security Control |
+|---|---|---|
+| Unauthorized device connection | Unauthorized network access | Switch port security with sticky MAC |
+| Unauthorized access to ADMIN network | Exposure of administrative resources | VLAN segmentation and extended ACL |
+| Access through unused switch ports | Unapproved network connections | Unused ports administratively disabled |
+| Insecure remote device management | Unauthorized device administration | SSH version 2 and local authentication |
+| Unauthorized router SSH access | Router configuration exposure | SSH-ADMIN-ONLY access control list |
+
 ### Network Addressing Details
 
 - ADMIN subnet: 192.168.10.0/24
