@@ -102,6 +102,41 @@ The network consists of four devices: one router, one managed switch, and two en
 - Purpose: Represents an employee workstation.
 
 ## 5. IP Addressing Plan
+The network uses private IPv4 addressing with a subnet mask of 255.255.255.0 (/24). Two separate subnets are configured to support the ADMIN and EMPLOYEES VLANs.
+
+### IP Address Allocation
+
+| Device | Interface | IP Address | Subnet Mask | Default Gateway | VLAN |
+|---|---|---|---|---|---|
+| R1 | G0/0.10 | 192.168.10.1 | 255.255.255.0 | N/A | 10 - ADMIN |
+| R1 | G0/0.20 | 192.168.20.1 | 255.255.255.0 | N/A | 20 - EMPLOYEES |
+| SW1 | VLAN 10 | 192.168.10.2 | 255.255.255.0 | 192.168.10.1 | 10 - ADMIN |
+| PC0 | FastEthernet0 | 192.168.10.10 | 255.255.255.0 | 192.168.10.1 | 10 - ADMIN |
+| PC1 | FastEthernet0 | 192.168.20.10 | 255.255.255.0 | 192.168.20.1 | 20 - EMPLOYEES |
+
+### Subnet Details
+
+**ADMIN Network**
+- Network address: 192.168.10.0/24
+- Default gateway: 192.168.10.1
+- Subnet mask: 255.255.255.0
+- Assigned VLAN: 10
+
+**EMPLOYEES Network**
+- Network address: 192.168.20.0/24
+- Default gateway: 192.168.20.1
+- Subnet mask: 255.255.255.0
+- Assigned VLAN: 20
+
+### IP Addressing Explanation
+
+The router uses two logical subinterfaces, G0/0.10 and G0/0.20, to provide default gateway services to the respective VLANs.
+
+The switch has a management IP address configured on its VLAN 10 interface. Its default gateway allows management traffic to reach devices outside its local subnet.
+
+PC0 and PC1 use static IPv4 addressing. Each workstation is assigned an IP address from its respective subnet.
+
+The addressing plan helps organise network devices and supports communication between the two VLANs through the router, subject to the configured ACL rules.
 
 ## 6. Security Implementation
 
