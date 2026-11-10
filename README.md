@@ -83,13 +83,13 @@ The intended office environment includes:
 - [x] Security risk assessment
 - [x] Security recommendations
 - [x] Cisco Packet Tracer simulation
-- [ ] Final project report
+- [x] Final project report
 
 ## Learning Outcomes
 Through this project, I aim to develop practical knowledge of computer networking, network security, risk assessment, and technical documentation.
 
 ## Project Status
-Milestones 1–4 completed. Additional project documentation and security testing are in progress.
+Milestones 1–6 completed. Network configuration, security verification, project documentation, and final report are complete.
 
 ## Disclaimer
 This project is designed for educational purposes using a hypothetical office environment. No unauthorized networks or systems will be accessed or tested.
