@@ -139,3 +139,6 @@ This project is designed for educational purposes using a hypothetical office en
 - The SSH management ACL limits remote access to the ADMIN subnet.
 - RSA 1024-bit keys were used for Packet Tracer compatibility; production systems should use stronger supported key sizes.
 - This project demonstrates basic network segmentation and access control, not a complete production security architecture.
+## Network Topology
+
+![Network Topology](network-topology.png)
