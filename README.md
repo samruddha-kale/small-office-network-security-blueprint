@@ -213,5 +213,23 @@ Security features implemented:
 - RSA 1024-bit keys were used for Packet Tracer compatibility; production systems should use stronger supported key sizes.
 - This project demonstrates basic network segmentation and access control, not a complete production security architecture.
 
+### Milestone 5: Project Documentation
+
+- Documented the network device inventory.
+- Created an IP addressing plan.
+- Documented the network security risk assessment.
+- Added future security recommendations.
+- Updated the project README with implementation details and verification results.
+
+### Milestone 6: Final Project Report
+
+- Created `PROJECT-REPORT.md`.
+- Documented the project introduction and objectives.
+- Documented network design, device inventory, and IP addressing.
+- Explained the implemented security controls.
+- Recorded testing and verification results.
+- Documented security risks, recommendations, and project limitations.
+- Added the project conclusion.
+  
 **Author:** Samruddha Kale  
 **Field:** IT & Cybersecurity
