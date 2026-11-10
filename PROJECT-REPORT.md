@@ -318,5 +318,22 @@ Consider additional network devices and backup connectivity to reduce downtime i
 Implementing these measures would improve the security, reliability, and maintainability of the network if the design were expanded for a real office environment.
 
 ## 10. Project Limitations
+This project was developed and tested in Cisco Packet Tracer. Although it demonstrates several important networking and security concepts, it has certain limitations.
+
+1. **Simulation Environment:** The network was tested in a simulated environment rather than on physical networking hardware.
+
+2. **Limited Network Size:** The topology contains only one router, one switch, and two end devices. A real office network may require additional devices and network segments.
+
+3. **Stateless ACL:** The configured ACL filters traffic based on defined rules but does not provide stateful firewall inspection.
+
+4. **No Advanced Monitoring:** Centralized logging, intrusion detection, and advanced network monitoring were not implemented.
+
+5. **No Network Redundancy:** The design has no backup router, switch, or network connection.
+
+6. **Limited Security Testing:** Testing focused on connectivity and verification of configured controls. It did not include a comprehensive security audit or penetration test.
+
+7. **Simplified Authentication:** SSH uses local device authentication. Enterprise authentication systems and multi-factor authentication were not implemented.
+
+Despite these limitations, the project provides practical experience with network segmentation, access control, device hardening, secure management, and basic security verification.
 
 ## 11. Conclusion
