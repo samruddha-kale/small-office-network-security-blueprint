@@ -12,13 +12,15 @@ This project focuses on designing and securing a hypothetical small office netwo
 - Recommend security measures to improve network protection.
 
 ## Tools & Technologies
+
 - Cisco Packet Tracer
-- Microsoft Excel
+- Cisco IOS CLI
 - GitHub
 - Windows
 
-## Project Scope
-The simulated office environment will include:
+## Planned Project Scope
+
+The intended office environment includes:
 - Employee computers
 - Management workstation
 - Network printer
@@ -27,13 +29,13 @@ The simulated office environment will include:
 - Employee and guest network concepts
 
 ## Planned Deliverables
-- [ ] Network topology diagram
+- [x] Network topology diagram
 - [ ] Device inventory
 - [ ] IP addressing plan
-- [ ] Network segmentation design
+- [x] Network segmentation design
 - [ ] Security risk assessment
 - [ ] Security recommendations
-- [ ] Cisco Packet Tracer simulation
+- [x] Cisco Packet Tracer simulation
 - [ ] Final project report
 
 ## Learning Outcomes
@@ -44,10 +46,25 @@ Currently in progress.
 
 ## Disclaimer
 This project is designed for educational purposes using a hypothetical office environment. No unauthorized networks or systems will be accessed or tested.
+## Network Design and Security Features
 
+The current network is divided into two VLANs:
+
+- **VLAN 10 — ADMIN:** Dedicated administrative network.
+- **VLAN 20 — EMPLOYEES:** Separate employee network.
+
+Security features implemented:
+
+- VLAN-based network segmentation.
+- Inter-VLAN routing using router-on-a-stick.
+- Extended ACL to restrict employee-to-admin traffic.
+- Switch port security with sticky MAC learning.
+- Shutdown of unused switch ports.
+- SSH version 2 for secure device management.
+- Restricted router SSH access using an ACL.
+ ## Network Topology
+![Network Topology](network-topology.png)
 ---
-**Author:** Samruddha Kale  
-**Field:** IT & Cybersecurity
 ## Project Progress
 
 ### Milestone 1: Network Setup and VLAN Segmentation
@@ -65,7 +82,7 @@ This project is designed for educational purposes using a hypothetical office en
 - Blocked IP traffic initiated from EMPLOYEES to ADMIN.
 - Allowed ICMP echo replies from EMPLOYEES to ADMIN so ADMIN-initiated ping tests could succeed.
 
-### Verification Results
+### Milestone 2 Verification Results
 
 | Test | Expected result | Actual result |
 |---|---|---|
@@ -74,6 +91,7 @@ This project is designed for educational purposes using a hypothetical office en
 | PC0 → PC1 before ACL | Success | Passed |
 | PC1 → PC0 after ACL | Blocked | Passed |
 | PC0 → PC1 after ACL | Success | Passed |
+
 ### Milestone 3: Network Hardening
 
 - Configured switch port security on `Fa0/1` and `Fa0/2`.
@@ -97,12 +115,13 @@ This project is designed for educational purposes using a hypothetical office en
 | PC1 → EMPLOYEES gateway | Success | Passed |
 | PC0 → PC1 | Success | Passed |
 
-### Additional Security Notes
+### Milestone 3: Additional Security Notes
 
 - Port security helps limit unauthorized device connections to access ports.
 - Sticky MAC learning dynamically learns and stores secure MAC addresses.
 - Restrict mode drops traffic from violating MAC addresses and records security violations.
 - Unused switch ports are administratively disabled to reduce unnecessary access points.
+ 
 ### Security Notes
 
 - VLANs provide logical network segmentation.
@@ -139,33 +158,13 @@ This project is designed for educational purposes using a hypothetical office en
 - RSA 1024-bit keys were used for Packet Tracer compatibility; stronger keys should be used in production.
 - This project demonstrates foundational network security concepts and is not a production-ready security deployment.
 
-### Additional Security Notes
+### Milestone 4: Additional Security Notes
 
 - SSH provides encrypted remote device management.
 - Local user authentication avoids relying on a shared VTY password.
 - The SSH management ACL limits remote access to the ADMIN subnet.
 - RSA 1024-bit keys were used for Packet Tracer compatibility; production systems should use stronger supported key sizes.
 - This project demonstrates basic network segmentation and access control, not a complete production security architecture.
-- ## Project Overview
 
-This project demonstrates the design and basic security configuration of a small office network using Cisco Packet Tracer.
-
-The network is divided into two VLANs:
-
-- **VLAN 10 — ADMIN:** Dedicated administrative network.
-- **VLAN 20 — EMPLOYEES:** Separate employee network.
-
-### Security Features
-
-- VLAN-based network segmentation.
-- Inter-VLAN routing using router-on-a-stick.
-- Extended ACL to restrict employee-to-admin traffic.
-- Switch port security with sticky MAC learning.
-- Shutdown of unused switch ports.
-- SSH version 2 for secure device management.
-- Restricted router SSH access using an ACL.
-
-**Tools Used:** Cisco Packet Tracer, Cisco IOS CLI, GitHub.
-## Network Topology
-
-![Network Topology](network-topology.png)
+**Author:** Samruddha Kale  
+**Field:** IT & Cybersecurity
