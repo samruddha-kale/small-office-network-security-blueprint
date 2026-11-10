@@ -139,6 +139,26 @@ This project is designed for educational purposes using a hypothetical office en
 - The SSH management ACL limits remote access to the ADMIN subnet.
 - RSA 1024-bit keys were used for Packet Tracer compatibility; production systems should use stronger supported key sizes.
 - This project demonstrates basic network segmentation and access control, not a complete production security architecture.
+- ## Project Overview
+
+This project demonstrates the design and basic security configuration of a small office network using Cisco Packet Tracer.
+
+The network is divided into two VLANs:
+
+- **VLAN 10 — ADMIN:** Dedicated administrative network.
+- **VLAN 20 — EMPLOYEES:** Separate employee network.
+
+### Security Features
+
+- VLAN-based network segmentation.
+- Inter-VLAN routing using router-on-a-stick.
+- Extended ACL to restrict employee-to-admin traffic.
+- Switch port security with sticky MAC learning.
+- Shutdown of unused switch ports.
+- SSH version 2 for secure device management.
+- Restricted router SSH access using an ACL.
+
+**Tools Used:** Cisco Packet Tracer, Cisco IOS CLI, GitHub.
 ## Network Topology
 
 ![Network Topology](network-topology.png)
