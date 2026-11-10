@@ -262,6 +262,25 @@ SSH login from the ADMIN workstation (PC0) to both network devices was successfu
 The tests confirmed that the network provided the intended VLAN separation, inter-VLAN traffic control, switch port security, and secure remote device management within the Packet Tracer simulation.
 
 ## 8. Security Risk Assessment
+This section identifies potential security risks in the hypothetical small office network and evaluates their possible impact. The assessment considers the network design, configured security controls, and limitations of the Packet Tracer simulation.
+
+| Security Risk | Possible Impact | Existing Mitigation |
+|---|---|---|
+| Unauthorized access between network segments | Employees may access sensitive ADMIN resources | VLAN segmentation and ACL restrictions |
+| Unauthorized device connection | An unknown device may connect through a switch port | Port security with sticky MAC learning |
+| Unauthorized remote management access | Attackers may attempt to manage network devices | SSH v2, local authentication, and VTY access restrictions |
+| Unused switch ports being accessed | Unused connections could be misused | Unused switch ports are administratively shut down |
+| Weak device passwords | Unauthorized users may gain administrative access | Local authentication and enable secrets; strong unique passwords are recommended |
+| Misconfiguration of network devices | Incorrect settings may weaken network security or disrupt connectivity | Configuration verification and documentation |
+| Lack of network monitoring | Suspicious activity may go unnoticed | Monitoring and logging are recommended for future implementation |
+
+### Risk Assessment Summary
+
+The implemented controls reduce several common risks, including unauthorized inter-VLAN communication, unauthorized device connections, and insecure remote device management.
+
+However, the network still has limitations. The ACL is stateless, and the simulation does not include advanced monitoring, intrusion detection, centralized logging, or redundant network devices.
+
+These risks should be considered when expanding the design for a real office environment.
 
 ## 9. Security Recommendations
 
