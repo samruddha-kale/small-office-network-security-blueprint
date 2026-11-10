@@ -12,7 +12,19 @@ The project is implemented and tested in a simulated environment using Cisco Pac
 
 
 ## 2. Project Objectives
+The main objectives of this project are:
 
+1. To understand the basic structure and working of a small office network.
+2. To identify the functions of routers, switches, and end devices.
+3. To create an IP addressing plan for different network segments.
+4. To implement VLAN-based network segmentation for ADMIN and EMPLOYEES.
+5. To configure inter-VLAN routing using the router-on-a-stick method.
+6. To implement Access Control Lists (ACLs) to control traffic between VLANs.
+7. To improve network security using switch port security and unused-port shutdown.
+8. To enable secure remote device management using SSH version 2.
+9. To test network connectivity and verify the implemented security controls.
+10. To document potential security risks, limitations, and recommendations.
+    
 ## 3. Network Design
 
 ## 4. Device Inventory
