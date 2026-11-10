@@ -18,6 +18,31 @@ This project focuses on designing and securing a hypothetical small office netwo
 - GitHub
 - Windows
 
+## Device Inventory
+
+| Device Name | Device Type | Model | Purpose |
+|---|---|---|---|
+| R1 | Router | Cisco 1941 | Inter-VLAN routing, traffic control and SSH management |
+| SW1 | Switch | Cisco 2960 | VLAN segmentation, port security and device connectivity |
+| PC0 | End Device | PC | ADMIN network workstation |
+| PC1 | End Device | PC | EMPLOYEES network workstation |
+## IP Addressing Plan
+
+| Device | Interface | IP Address | Subnet Mask | Default Gateway | VLAN |
+|---|---|---|---|---|---|
+| R1 | G0/0.10 | 192.168.10.1 | 255.255.255.0 | N/A | 10 - ADMIN |
+| R1 | G0/0.20 | 192.168.20.1 | 255.255.255.0 | N/A | 20 - EMPLOYEES |
+| SW1 | VLAN 10 | 192.168.10.2 | 255.255.255.0 | 192.168.10.1 | 10 - ADMIN |
+| PC0 | FastEthernet0 | 192.168.10.10 | 255.255.255.0 | 192.168.10.1 | 10 - ADMIN |
+| PC1 | FastEthernet0 | 192.168.20.10 | 255.255.255.0 | 192.168.20.1 | 20 - EMPLOYEES |
+
+### Network Addressing Details
+
+- ADMIN subnet: 192.168.10.0/24
+- EMPLOYEES subnet: 192.168.20.0/24
+- Subnet mask: 255.255.255.0
+- Inter-VLAN routing: Router-on-a-stick using R1
+
 ## Planned Project Scope
 
 The intended office environment includes:
