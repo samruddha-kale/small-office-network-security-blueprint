@@ -283,6 +283,39 @@ However, the network still has limitations. The ACL is stateless, and the simula
 These risks should be considered when expanding the design for a real office environment.
 
 ## 9. Security Recommendations
+The following recommendations could further improve the security of the small office network. These measures are suggested for future implementation and are not all currently configured in the Packet Tracer simulation.
+
+### 9.1 Strong Authentication
+
+Use strong, unique passwords for router and switch administration. Where supported, implement multi-factor authentication for administrative access.
+
+### 9.2 Stronger SSH Encryption
+
+Use stronger RSA key sizes, such as 2048 bits or higher, where supported by the device. The current Packet Tracer configuration uses a 1024-bit RSA key for compatibility.
+
+### 9.3 Network Monitoring and Logging
+
+Implement centralized logging and network monitoring to help administrators identify unusual activity, configuration changes, and possible security incidents.
+
+### 9.4 Firewall Protection
+
+Deploy a suitable firewall with stateful inspection to provide more advanced traffic filtering and protection between internal networks and external networks.
+
+### 9.5 Regular Configuration Backups
+
+Maintain secure backups of router and switch configurations. Review backups periodically to ensure that configurations can be restored when required.
+
+### 9.6 Firmware and Software Updates
+
+Keep network device firmware and software updated to address known vulnerabilities and improve security.
+
+### 9.7 Network Redundancy
+
+Consider additional network devices and backup connectivity to reduce downtime if a device or connection fails.
+
+### Recommendation Summary
+
+Implementing these measures would improve the security, reliability, and maintainability of the network if the design were expanded for a real office environment.
 
 ## 10. Project Limitations
 
