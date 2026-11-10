@@ -46,6 +46,18 @@ This project focuses on designing and securing a hypothetical small office netwo
 | Insecure remote device management | Unauthorized device administration | SSH version 2 and local authentication |
 | Unauthorized router SSH access | Router configuration exposure | SSH-ADMIN-ONLY access control list |
 
+## Security Recommendations
+
+- Use strong, unique passwords for all network devices.
+- Use SSH instead of Telnet for remote device management.
+- Regularly update router and switch firmware.
+- Back up network device configurations securely.
+- Monitor network activity and review security logs.
+- Implement a dedicated guest VLAN with restricted access.
+- Use a firewall with stateful inspection for better traffic control.
+- Maintain endpoint protection and regularly update computers.
+- Restrict access to sensitive internal resources.
+- 
 ### Network Addressing Details
 
 - ADMIN subnet: 192.168.10.0/24
